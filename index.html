@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trying Demo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+    * {
+         box-sizing: border-box;
+      }
+
+     body {
+         font-size: 20px;
+         margin: 0px;
+      }
+
+      h1 {
+         font-size: 40px;
+         padding-left: 30px;
+      }
+
+      .header_section {
+         background: #e62c2c; /*background: url("weather.png")*/
+         padding: 15px;
+         margin: 0px;
+         margin-top: -40px;
+         text-align: center;
+         font-family: Montserrat;
+         color: white;
+         /*-webkit-animation: glow 1s ease-in-out infinite alternate;
+         -moz-animation: glow 1s ease-in-out infinite alternate;
+         animation: glow 1s ease-in-out infinite alternate;
+         text-shadow: 4px 8px 6px #252552;*/
+       }
+
+       /*
+      @-webkit-keyframes glow {
+      from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 50px #e60073;
+       }
+       to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 50px #ff4da6, 0 0  80px #ff4da6;
+       }
+       }*/
+
+      .header_section h1 {
+         font-size: 50px;
+       }
+
+      .header_section h2 {
+         padding-left: 30px;
+      }
+
+      .header_section h4 {
+         padding-left: 30px;
+      }
+
+      p {
+         padding-left: 30px;
+         padding-right: 30px;
+      }
+
+      .navigation {
+         font-weight: bold;
+         background: white;
+         font-color: black;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         margin-top: -26px;
+         font-size: 1em;
+         /*text-shadow:
+         0 0  5px #fff,
+         0 0  10px #fff,
+         0 0  15px #fff,
+         0 0  20px #0f0,
+         0 0  35px #0f0,
+        0 0  40px #0f0,
+        0 0  60px #0f0,
+        0 0  90px #0f0*/
+        }
+
+      .navigation a {
+         color: black;
+         text-decoration: none;
+         padding: 15px;
+        }
+
+      .navigation a:hover {
+         color: #e31212;
+      }
+
+        /* Column container */
+      .row {
+       display: -ms-flexbox; /* IE10 */
+        display: flex;
+         -ms-flex-wrap: wrap; /* IE10 */
+         flex-wrap: wrap;
+      }
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+       .side {
+         -ms-flex: 10%; /* IE10 */
+         flex: 10%;
+         background-color: #fae1e1;
+         padding: 20px;
+         position: fixed;
+         height: 100%;
+         margin-top: -240px;
+         text-align: left;
+         }
+
+/* Main column */
+       .main {
+         -ms-flex: 90%; /* IE10 */
+         flex: 90%;
+         background-color: white;
+         padding: 20px;
+         margin-left: 17%;
+       }
+
+       img {
+       margin: 30px;
+       }
+
+       b {
+       color: #e00b0b;
+       }
+
+       mark {
+       background-color: #dbc742;
+       }
+
+       ol {
+       list-style-type: lower-roman;
+       }
+
+       table, td, tr {
+       border:1px solid #595656;
+       border-collapse: collapse;
+       padding: 8px;
+       }
+
+       table, .RESULT_SECTION, .button {
+       margin: 3%;
+       padding: 0.2%;
+       }
+
+       th {
+       border: solid;
+       font-weight: bold;
+       padding: 8px;
+       }
+
+       .button {
+       padding: 10px;
+       width: 92%;
+       }
+
+    .RESULT_SECTION {
+    width: 45%;
+    float: right;
+    margin-top: -2px;
+    }
+
+    .table_part {
+    width: 45%;
+    float: left;
+    }
+
+    .result_text {
+    border: 3px solid black;
+    height: 200px;
+    }
+
+    .table_part, .RESULT_SECTION {
+    height: 500px;
+    }
+    .sidebar_title, .link1 {
+    }
+    .sidebar_title {
+     font-size: 20px;
+    }
+    .link1 {
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+    .side a {
+    color: black;
+    text-decoration: none;
+    }
+    .side a:hover {
+    color: red;
+    font-weight: 800;
+    text-decoration: none;
+    }
+
+ </style>
+
+<script>
+    function multiply(){
+        age_feature_i= 0.2
+        gender_fi= 0.2
+        pressure_fi= 0.2
+        chol_fi = 0.2
+        sugar_fi= 0.2
+
+        age=document.getElementById("VALUE1").value;
+        female=document.getElementById("FEMALE").checked;
+        male=document.getElementById("MALE").checked;
+        blood_pressure=document.getElementById("VALUE3").value;
+        cholesterol=document.getElementById("VALUE4").value;
+        blood_sugar=document.getElementById("VALUE5").value;
+        if (age <= 40){
+         over_40 = false;
+        }
+        else {
+         over_40 = true;
+        }
+       /* document.getElementById("result").innerHTML=age*age_feature_i+gender*gender_fi+blood_pressure*pressure_fi+cholesterol*chol_fi+blood_sugar*sugar_fi; */
+       document.getElementById("result").innerHTML=over_40;
+       /*document.getElementById("result").innerHTML=male*/
+    }
+</script>
+
+</head>
+
+<body>
+
+<a name="top"></a>
+<div class="header_section">
+<h1>HEART ATTACKS</h1>
+<h2>PREDICTION</h2>
+<h4>by machine learning</h4>
+</div>
+
+<!--<div class="navigation">
+<a href="https://www.google.com.ec/">Link1</a>
+<a href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
+<a href="#">Link3</a>
+<a href="#" class="right">Link</a>
+</div>-->
+
+<div class="row">
+<div class="side">
+   <p class="sidebar_title">Characteristics:</p>
+     <a class="link1" href="#bottom">bottom link</a>
+    <a class="link1" href="https://www.google.com.ec/">Link1</a>
+    <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
+    <a class="link1" href="index.html">Home</a>
+    <a class="link1" href="index2.html" >Information</a>
+
+
+</div>
+<div class="main">
+
+    <div class="table_part">
+<h1>TITLE: GIRAFFE</h1>
+<form>
+    <table>
+        <tr>
+            <th>LABELS</th>
+            <th>VALUES</th>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td><input type="text" id="VALUE1" style="width: 100%;" placeholder="Ex. 45"></td>
+        </tr>
+
+        <tr>
+            <td><i class="fa fa-venus-mars" style="color: blue;"></i> GENDER</td>
+            <td>
+    <input type="radio" id="FEMALE" name="gender">
+    <label for="FEMALE">FEMALE</label><br>
+    <input type="radio" id="MALE" name="gender">
+    <label for="MALE">MALE</label><br></td>
+        </tr>
+
+        <tr>
+            <td>Resting blood pressure (mmHg)</td>
+            <td><input type="text" id="VALUE3" style="width: 100%"; placeholder="90/60mmHg - 140/90mmHg"></td>
+
+        </tr>
+
+        <tr>
+            <td>Cholesterol(mg/dL)</td>
+            <td><input type="text" id="VALUE4" style="width: 100%"; placeholder="125 - 350 mg/dL "></td>
+        </tr>
+
+        <tr>
+            <td>Fasting blood sugar (mg/dL)</td>
+            <td><input type="text" id="VALUE5" style="width: 100%"; placeholder="30 - 600 mg/dL"></td>
+        </tr>
+
+    </table>
+
+<input type="button" value="SUBMIT" class="button" onclick="multiply()">
+    <br>
+    </form>
+        </div>
+    <div class="RESULT_SECTION">
+    <h1>RESULTS</h1>
+        <div class="result_text">
+    <p id="result"> </p>
+            </div>
+        </div>
+
+    <p><b>General information:</b></p>
+<p>
+    The <b>giraffe</b> is an African artiodacty mammal, the tallest living terrestrial animal and the largest ruminant. It is traditionally considered to be one species, Giraffa <i>camelopardalis, with nine subspecies</i>. However, the existence of up to eight extant giraffe species has been described, based upon research into the mitochondrial and nuclear DNA, as well as morphological measurements of Giraffa. Seven other species are extinct,  <mark>prehistoric species known from fossils.</mark>
+</p>
+        <div><a name="bottom"></a></div>
+
+<img src="https://i.pinimg.com/originals/60/0f/46/600f46f9bc9ac65d764fcd9b6398a71a.jpg" alt="giraffe looking at you" title="giraffe looking at you" style="width: 400px; height: 500px; float: left; border: solid;">
+
+<p>
+Indiana es uno de los cincuenta estados de los Estados Unidos, localizado en la región del Medio Oeste (Midwest) del país; su capital es Indianápolis. Es el 15.º estado en población, con cerca de 6,3 millones de habitantes, y 38.º en tamaño, lo cual lo ubica en la posición 17.ª en densidad de población. Después de Hawái, Indiana es el más pequeño de los estados localizados al oeste de los Apalaches. Limita al norte con el lago y el estado de Míchigan, al sur con Kentucky, al este con Ohio y con Illinois por el oeste.
+</p>
+<p>
+Indiana es uno de los cincuenta estados de los Estados Unidos, localizado en la región del Medio Oeste (Midwest) del país; su capital es Indianápolis. Es el 15.º estado en población, con cerca de 6,3 millones de habitantes, y 38.º en tamaño, lo cual lo ubica en la posición 17.ª en densidad de población. Después de Hawái, Indiana es el más pequeño de los estados localizados al oeste de los Apalaches. Limita al norte con el lago y el estado de Míchigan, al sur con Kentucky, al este con Ohio y con Illinois por el oeste.
+</p>
+<p>
+Indiana es uno de los cincuenta estados de los Estados Unidos, localizado en la región del Medio Oeste (Midwest) del país; su capital es Indianápolis. Es el 15.º estado en población, con cerca de 6,3 millones de habitantes, y 38.º en tamaño, lo cual lo ubica en la posición 17.ª en densidad de población. Después de Hawái, Indiana es el más pequeño de los estados localizados al oeste de los Apalaches. Limita al norte con el lago y el estado de Míchigan, al sur con Kentucky, al este con Ohio y con Illinois por el oeste.
+</p>
+        <a href="#top">Link2</a>
+<br>
+</div>
+
+</div>
+
+
+</body>
+</html>
