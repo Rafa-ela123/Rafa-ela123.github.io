@@ -146,6 +146,7 @@
        table, .RESULT_SECTION, .button {
        margin: 3%;
        padding: 0.2%;
+       margin-bottom: 100px;
        }
 
        th {
@@ -248,19 +249,19 @@
 
 <div class="row">
 <div class="side">
-   <p class="sidebar_title">Characteristics:</p>
-     <a class="link1" href="#bottom">bottom link</a>
-    <a class="link1" href="https://www.google.com.ec/">Link1</a>
-    <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
+   <p class="sidebar_title">More about:</p>
     <a class="link1" href="index.html">Home</a>
     <a class="link1" href="index2.html" >Information</a>
-
+    <!-- <a class="link1" href="#bottom">bottom link</a>-->
+    <a class="link1" href="https://www.google.com.ec/">Link1</a>
+    <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
 
 </div>
 <div class="main">
 
     <div class="table_part">
-<h1>TITLE: GIRAFFE</h1>
+<h1>Heart attack prediction</h1>
+<h4>Fill the values:</h4>
 <form>
     <table>
         <tr>
@@ -269,35 +270,78 @@
         </tr>
 
         <tr>
-            <td>Age</td>
-            <td><input type="text" id="VALUE1" style="width: 100%;" placeholder="Ex. 45"></td>
+            <td><i class="fa fa-calendar" style="color: black;"></i> Age</td>
+            <td><input type="text" id="VALUE1" style="width: 100%;"></td>
         </tr>
 
         <tr>
-            <td><i class="fa fa-venus-mars" style="color: blue;"></i> GENDER</td>
+            <td><i class="fa fa-venus-mars" style="color: black;"></i> Gender</td>
             <td>
-    <input type="radio" id="FEMALE" name="gender">
-    <label for="FEMALE">FEMALE</label><br>
-    <input type="radio" id="MALE" name="gender">
-    <label for="MALE">MALE</label><br></td>
+    <input type="radio" id="Female" name="gender">
+    <label for="Female">Female</label><br>
+    <input type="radio" id="Male" name="gender">
+    <label for="Male">Male</label><br></td>
         </tr>
 
         <tr>
-            <td>Resting blood pressure (mmHg)</td>
-            <td><input type="text" id="VALUE3" style="width: 100%"; placeholder="90/60mmHg - 140/90mmHg"></td>
+            <td><i class="fa fa-street-view" style="color: black;"></i> Resting blood pressure (mmHg)</td>
+            <td><input type="text" id="VALUE3" style="width: 100%"; placeholder="60 - 200mmHg"></td>
 
         </tr>
 
         <tr>
-            <td>Cholesterol(mg/dL)</td>
-            <td><input type="text" id="VALUE4" style="width: 100%"; placeholder="125 - 350 mg/dL "></td>
+            <td><i class="fa fa-balance-scale" style="color: black;"></i> Total cholesterol(mg/dL)</td>
+            <td><input type="text" id="VALUE4" style="width: 100%"; placeholder="125 - 400 mg/dL "></td>
         </tr>
-
         <tr>
-            <td>Fasting blood sugar (mg/dL)</td>
-            <td><input type="text" id="VALUE5" style="width: 100%"; placeholder="30 - 600 mg/dL"></td>
+            <td><i class="fa fa-tint" style="color: red;"></i> Fasting blood sugar is > 120(mg/dL)</td>
+            <td>
+    <input type="radio" id="Yes" name="fbs">
+    <label for="Yes">Yes</label><br>
+    <input type="radio" id="No" name="fbs">
+    <label for="No">No</label><br></td>
         </tr>
 
+
+         <tr>
+            <td><i class="fa fa-heart" style="color: red;"></i> Exercise-induced ST depression in relation to rest (mm)</td>
+            <td><input type="text" id="VALUE6" style="width: 100%"; placeholder="0 - 2 mm"></td>
+        </tr>
+
+         <tr>
+            <td><i class="fa fa-user-md" style="color: black;"></i> Angina induced by exercise</td>
+            <td>
+    <input type="radio" id="True_angina" name="angina">
+    <label for="True_angina">Yes</label><br>
+    <input type="radio" id="False_angina" name="angina">
+    <label for="False_angina">No</label><br></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-stethoscope" style="color: black;"></i> Maximun heart rate achieved (bpm)</td>
+            <td><input type="text" id="VALUE7" style="width: 100%"; placeholder="80 - 220 bpm"></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-heartbeat" style="color: red;"></i> Resting ECG results</td>
+            <td>
+    <input type="radio" id="ECG_0" name="ECG">
+    <label for="ECG_0">Normal</label><br>
+    <input type="radio" id="ECG_1" name="ECG">
+    <label for="ECG_1">ST wave abnormality</label><br>
+    <input type="radio" id="ECG_2" name="ECG">
+    <label for="ECG_2">Left ventricular hypertrophy</label><br></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-ambulance" style="color: black;"></i> Chest pain </td>
+            <td>
+    <input type="radio" id="CP_1" name="CP">
+    <label for="CP_1">Typical Angina</label><br>
+    <input type="radio" id="CP_2" name="CP">
+    <label for="CP_2">Atypical angina</label><br>
+    <input type="radio" id="CP_3" name="CP">
+    <label for="CP_3">Non-anginal pain</label><br>
+    <input type="radio" id="CP_4" name="CP">
+    <label for="CP_4">Asymptomatic</label><br></td>
+        </tr>
     </table>
 
 <input type="button" value="SUBMIT" class="button" onclick="multiply()">
@@ -311,24 +355,7 @@
             </div>
         </div>
 
-    <p><b>General information:</b></p>
-<p>
-    The <b>giraffe</b> is an African artiodacty mammal, the tallest living terrestrial animal and the largest ruminant. It is traditionally considered to be one species, Giraffa <i>camelopardalis, with nine subspecies</i>. However, the existence of up to eight extant giraffe species has been described, based upon research into the mitochondrial and nuclear DNA, as well as morphological measurements of Giraffa. Seven other species are extinct,  <mark>prehistoric species known from fossils.</mark>
-</p>
-        <div><a name="bottom"></a></div>
-
-<img src="https://i.pinimg.com/originals/60/0f/46/600f46f9bc9ac65d764fcd9b6398a71a.jpg" alt="giraffe looking at you" title="giraffe looking at you" style="width: 400px; height: 500px; float: left; border: solid;">
-
-<p>
-Indiana es uno de los cincuenta estados de los Estados Unidos, localizado en la región del Medio Oeste (Midwest) del país; su capital es Indianápolis. Es el 15.º estado en población, con cerca de 6,3 millones de habitantes, y 38.º en tamaño, lo cual lo ubica en la posición 17.ª en densidad de población. Después de Hawái, Indiana es el más pequeño de los estados localizados al oeste de los Apalaches. Limita al norte con el lago y el estado de Míchigan, al sur con Kentucky, al este con Ohio y con Illinois por el oeste.
-</p>
-<p>
-Indiana es uno de los cincuenta estados de los Estados Unidos, localizado en la región del Medio Oeste (Midwest) del país; su capital es Indianápolis. Es el 15.º estado en población, con cerca de 6,3 millones de habitantes, y 38.º en tamaño, lo cual lo ubica en la posición 17.ª en densidad de población. Después de Hawái, Indiana es el más pequeño de los estados localizados al oeste de los Apalaches. Limita al norte con el lago y el estado de Míchigan, al sur con Kentucky, al este con Ohio y con Illinois por el oeste.
-</p>
-<p>
-Indiana es uno de los cincuenta estados de los Estados Unidos, localizado en la región del Medio Oeste (Midwest) del país; su capital es Indianápolis. Es el 15.º estado en población, con cerca de 6,3 millones de habitantes, y 38.º en tamaño, lo cual lo ubica en la posición 17.ª en densidad de población. Después de Hawái, Indiana es el más pequeño de los estados localizados al oeste de los Apalaches. Limita al norte con el lago y el estado de Míchigan, al sur con Kentucky, al este con Ohio y con Illinois por el oeste.
-</p>
-        <a href="#top">Link2</a>
+       <!-- <a href="#top">Link2</a> -->
 <br>
 </div>
 
