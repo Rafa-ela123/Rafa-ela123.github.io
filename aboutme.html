@@ -68,11 +68,12 @@
       }
 
       .navigation {
-         font-weight: bold;s
+         font-weight: bold;
          background: white;
          font-color: black;
-         padding-top:s 20px;
+         padding-top: 20px;
          padding-bottom: 20px;
+         margin-top: -26px;
          font-size: 1em;
          /*text-shadow:
          0 0  5px #fff,
@@ -83,7 +84,6 @@
         0 0  40px #0f0,
         0 0  60px #0f0,
         0 0  90px #0f0*/
-        z-index: -7;
         }
 
       .navigation a {
@@ -98,7 +98,7 @@
       }
 
         /* Column container */
-      .row, .siderow {
+      .row {
        display: -ms-flexbox; /* IE10 */
         display: flex;
          -ms-flex-wrap: wrap; /* IE10 */
@@ -114,9 +114,8 @@
          padding: 20px;
          position: fixed;
          height: 100%;
-         margin-top: 0px;
+         margin-top: -220px;
          text-align: left;
-         z-index: 9999;
          }
 
          .wrapper{
@@ -140,11 +139,10 @@
 
 /* Main column */
        .main {
-         -ms-flex: 90%; /* IE10 */
-         flex: 90%;
+         width: 80%;
          background-color: white;
          padding: 20px;
-         margin-left: 20%;
+         margin-left: 18%;
        }
 
        img {
@@ -172,7 +170,7 @@
        padding: 8px;
        }
 
-       table, .RESULT_SECTION, .RESULT_TEXT_SECTION {
+       table, .RESULT_SECTION, .button, .RESULT_TEXT_SECTION {
        margin: 3%;
        padding: 0.2%;
        margin-bottom: -7px;
@@ -185,36 +183,25 @@
        }
 
        .button {
-       width: 100%;
-       padding: 15px;
-       margin-top: 20px;
-       margin-bottom: 20px;
+       padding: 10px;
+       margin-bottom: 30px;
+       width: 89%;
        }
 
     .RESULT_SECTION {
-        width: 71%;
-        margin-top: -5px;
-        display: block;
+    margin-top: -5px;
     }
 
     .table_part {
     width: 100%;
     }
 
-    #result_text {
-        min-height: 270px;
-        min-width: 500px;
-        height: auto;
-        border: 1px solid #595656;
-        margin-bottom: 20px;
+    .result_text{
+    border: 1px solid #595656;
     }
-    #result {
-        float:left;
-    }
-    #risk_score_section {
-        float:right;
-        font-size: 160px;
-        margin-top: 35px;
+
+    .result_text {
+    height: 270px;
     }
     .table_part h1 {
         padding-left: 35px;
@@ -273,15 +260,7 @@
         position: absolute;
         z-index: 1;
     }
-    #discussion {
-        padding-left: 50px;
-        width: 100%;
-    }
-    .line {
-    border-top: 1px dashed #000;
-    width: 54%;
-    position: absolute;
-    }
+
     .blur-in {
         -webkit-animation: blur 0s forwards;
         -moz-animation: blur 0s forwards;
@@ -494,44 +473,32 @@
         padding: 20px 65px 10px 65px;
         color: dimgray;
     }
+    #result {
+        float:left;
+    }
+    #risk_score_section {
+        float:right;
+        font-size: 200px;
+        margin-top: 20px;
+    }
 
     /* heart beating*/
     .heart {
       text-align: center;
-      margin-right: 0px;
-      margin-top: 40px;
-      font-size: 150px;
-      color: #e00;
-      animation: beat .4s infinite alternate;
-      transform-origin: center;
+      margin-right: 70px;
+    }
+    .heart {
+        font-size: 150px;
+        color: #e00;
+        animation: beat .25s infinite alternate;
+        transform-origin: center;
     }
 
     /* Heart beat animation */
     @keyframes beat{
         to { transform: scale(1.4); }
     }
-
-    .noMargin {
-        border: 1px solid #fff;
-        padding: 0px;
-        margin: 0px;
-     }
-    @media screen and (max-width: 1650px) {
-        #result {
-        width: 100%;
-         }
-        #risk_score_section {
-        width: 100%;
-         }
-         #result_text {
-          min-height: 500px;
-         }
-         .heart {
-          margin-bottom: 250px;
-     }
-}
  </style>
-
 
 <script>
 $(function() {
@@ -552,7 +519,7 @@ $(function() {
     <script>
         function displayResults() {
 
-            // set default values of variables
+            // SET DEFAULT VALUES
             document.getElementById("result").innerHTML = "";
             var gender = "<span style='color: red;'>Please select a gender option</span>";
             var fbs = "<span style='color: red;'>Please select a blood sugar option</span>";
@@ -560,29 +527,27 @@ $(function() {
             var ecg = "<span style='color: red;'>Please select a resting ECG option</span>";
             var cp = "<span style='color: red;'>Please select a chest pain option</span>";
             var risk_score = 0;
-            var gender_num = 999;
-
-            //getting values only textboxes
+//getting values only textboxes
             var age = document.getElementById("VALUE1").value;
             var bp = document.getElementById("VALUE3").value;
             var chol = document.getElementById("VALUE4").value;
             var st = document.getElementById("VALUE6").value;
             var max_hr = document.getElementById("VALUE7").value;
 
-            // make labels to go with the values to print back results
+            // TEXT BOX LABELS
             array_names = ["Age", "Blood Pressure", "Cholesterol", "ST Depression", "Max Heart Rate"]
 
-            // put the entered values in a list
+            // TEXT BOX VALUES
             array = [age, bp, chol, st, max_hr]
 
-            // print each value back
+            // PRINT EACH VALUE BACK
             for (i = 0; i < array.length; i++) {
               //i=0 - element number=1 - variable age
 
-                // get the right value from the list
+                // GET THE RIGHT VALUE FROM THE LIST
                 var array_element = array[i]
 
-                // check if it is a number
+                // CHECK IF THE ENTERED VALUE IS A NUMBER
                 if(isNaN(array_element)){
                     document.getElementById("result").innerHTML
                                 += array_names[i] + ": "
@@ -590,22 +555,13 @@ $(function() {
                                 "<br>";
                 }
                 else {
-                    // check if it is empty
+                    // CHECK IF THE VALUE IS EMPTY
                     if (array_element.length > 0) {
                         if (i == 0) {
                             if (array_element >= 16 && array_element <= 115) {
-                                //var age_risk = array_element
-                                if (array_element > 40) {
-                                  document.getElementById("result").innerHTML
-                                      += array_names[i] + ": "
-                                      + array[i] + " (high risk)<br>";
-                                }
-                                else {
-                                  document.getElementById("result").innerHTML
-                                      += array_names[i] + ": "
-                                      + array[i] + " (no risk)<br>";
-                                }
-
+                                document.getElementById("result").innerHTML
+                                    += array_names[i] + ": "
+                                    + array[i] + "<br>";
                             }
                             else {
                                 document.getElementById("result").innerHTML
@@ -615,22 +571,9 @@ $(function() {
                         }
                         else if (i == 1) {
                             if (array_element >= 60 && array_element <= 200) {
-                              if (array_element >= 60 && array_element < 90) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
-                                    + array[i] + " (lower range risk)<br>";
-                              }
-                              else if (array_element >= 90 && array_element <= 130) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (no risk)<br>";
-                              }
-                              else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (high risk)<br>";
-                              }
-
+                                    + array[i] + "<br>";
                             }
                             else {
                                 document.getElementById("result").innerHTML
@@ -640,17 +583,9 @@ $(function() {
                         }
                         else if (i == 2) {
                             if (array_element >= 125 && array_element <= 400) {
-                              if (array_element > 200) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
-                                    + array[i] + " (high risk)<br>";
-                              }
-                              else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (no risk)<br>";
-                              }
-
+                                    + array[i] + "<br>";
                             }
                             else {
                                 document.getElementById("result").innerHTML
@@ -660,21 +595,9 @@ $(function() {
                         }
                         else if (i == 3) {
                             if (array_element >= 0 && array_element <= 2) {
-                              if (array_element >= 0 && array_element < 1) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
-                                    + array[i] + " (lower range risk)<br>";
-                              }
-                              else if (array_element >= 1 && array_element <= 1.5) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (no risk)<br>";
-                              }
-                              else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (high risk)<br>";
-                              }
+                                    + array[i] + "<br>";
                             }
                             else {
                                 document.getElementById("result").innerHTML
@@ -685,21 +608,9 @@ $(function() {
 
                         else if (i == 4) {
                             if (array_element >= 80 && array_element <= 220) {
-                              if (array_element >= 80 && array_element < 120) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
-                                    + array[i] + " (lower range risk)<br>";
-                              }
-                              else if (array_element >= 120 && array_element <= 190) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (no risk)<br>";
-                              }
-                              else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + " (high risk)<br>";
-                              }
+                                    + array[i] + "<br>";
                             }
                             else {
                                 document.getElementById("result").innerHTML
@@ -709,7 +620,7 @@ $(function() {
                         }
 
                     }
-                    // display reminder if empty
+                    // WRITE REMINDER IF VALUE IS EMPTY
                     else {
                         if (i == 0) {
                             document.getElementById("result").innerHTML
@@ -732,50 +643,31 @@ $(function() {
                 }
             }
 
-            // check which gender was picked
+            // CHECK WHICH GENDER BUTTON IS CHECKED
             if (document.getElementById("gender1").checked) {
                 gender = document.getElementById("gender1").value;
-                gender_num = 0
             }
             else if (document.getElementById("gender2").checked) {
                 gender = document.getElementById("gender2").value;
-                gender_num = 1
-            }
-            if (gender_num == 0 && age > 40) {
-              document.getElementById("result").innerHTML
-                                  += "Gender: "
-                                  + gender + " (risk range)<br>"; //females + 40 years
-            }
-            else if (gender_num == 1) {
-              document.getElementById("result").innerHTML
-                                  += "Gender: "
-                                  + gender + " (risk range)<br>";//males
-            }
-            else if (gender_num == 0 && age < 40) {
-              document.getElementById("result").innerHTML
-                                  += "Gender: "
-                                  + gender + " (no risk)<br>";//females - 40 years
-            }
-            else {
-              document.getElementById("result").innerHTML
-                  += "Gender: "
-                  + "<span style='color: red;'>Please, also enter age</span>" + "<br>";//complain
             }
 
+            document.getElementById("result").innerHTML
+                                += "Gender: "
+                                + gender + "<br>";
 
-            // check which blood sugar was picked
+            // CHECK WHICH BLOOD SUGAR BUTTON IS CHECKED
             if (document.getElementById("bloodsugar1").checked) {
                 fbs = document.getElementById("bloodsugar1").value;
             }
             else if (document.getElementById("bloodsugar2").checked) {
-                 fbs = document.getElementById("bloodsugar2").value;
+                bs = document.getElementById("bloodsugar2").value;
             }
 
             document.getElementById("result").innerHTML
                                 += "Blood Sugar: "
                                 + fbs + "<br>";
 
-            // check which angina was picked
+            // CHECK WHICH ANGINA BUTTON IS CHECKED
             if (document.getElementById("True_angina").checked) {
                 angina = document.getElementById("True_angina").value;
             }
@@ -787,7 +679,7 @@ $(function() {
                                 += "Exercise Angina: "
                                 + angina + "<br>";
 
-            // check which ecg was picked
+            // CHECK WHICH ECG BUTTON IS CHECKED
             if (document.getElementById("ECG_0").checked) {
                 ecg = document.getElementById("ECG_0").value;
             }
@@ -802,7 +694,7 @@ $(function() {
                                 += "Resting ECG: "
                                 + ecg + "<br>";
 
-            // check which cp was picked
+            // CHECK WHICH CHEST PAIN BUTTON IS CHECKED
             if (document.getElementById("CP_1").checked) {
                 cp = document.getElementById("CP_1").value;
             }
@@ -820,35 +712,15 @@ $(function() {
                                             += "Chest Pain: "
                                             + cp + "<br>";
 
-            document.getElementById("heart_div").style.visibility = "hidden";
-            document.getElementById("heart_div").style.display = "none";
             document.getElementById("risk_score_section").innerHTML = risk_score + "% <br>";
-            document.getElementById("discussion").innerHTML = "<div class='line'></div>" + "<br> text";
-
+            //document.getElementById("discussion").innerHTML = "....................................................................................................<br>text";
         }
 </script>
 
 </head>
 
 <body>
-    <div class="siderow">
-<div class="side">
-            <span class="sidebar_title">Navigation</span>
-
-            <a class="link_first" href="index.html">Home</a>
-            <a class="link1" href="index2.html" >Information</a>
-            <a class="link1" href="index2.html" >About Me</a>
-            <!-- <a class="link1" href="#bottom">bottom link</a>-->
-            <a class="link1" href="https://www.google.com.ec/">Link1</a>
-            <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
-</div>
-</div>
-
-        <a name="top"></a>
-
-
 <div class="row pop-up">
-
     <div class="box small-6 large-centered">
         <a href="#" class="close-button">x</a>
         <h3>Instructions</h3>
@@ -857,7 +729,11 @@ $(function() {
     </div>
 </div>
 <div id="overlay" class="cover blur-in">
-
+    <a name="top"></a>
+    <div class="header_section">
+        <h1>HEART ATTACKS PREDICTION</h1>
+        <h2>Risk prediction by machine learning</h2>
+    </div>
 
     <!--<div class="navigation">
     <a href="https://www.google.com.ec/">Link1</a>
@@ -866,13 +742,18 @@ $(function() {
     <a href="#" class="right">Link</a>
     </div>-->
 
-        <div class="header_section">
-        <h1>HEART ATTACKS PREDICTION</h1>
-        <h2>Risk prediction by machine learning</h2>
-    </div>
-
     <div class="row">
+        <div class="side">
+            <span class="sidebar_title">Navigation</span>
 
+            <a class="link_first" href="index.html">Home</a>
+            <a class="link1" href="index2.html" >Information</a>
+            <a class="link1" href="index2.html" >About Me</a>
+            <!-- <a class="link1" href="#bottom">bottom link</a>-->
+            <a class="link1" href="https://www.google.com.ec/">Link1</a>
+            <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
+
+        </div>
         <div class="main">
 
             <div class="table_part">
@@ -905,7 +786,7 @@ $(function() {
                         </tr>
 
                         <tr>
-                            <td><i class="fa fa-balance-scale" style="color: black;"></i> Total cholesterol (mg/dL)</td>
+                            <td><i class="fa fa-balance-scale" style="color: black;"></i> Total cholesterol(mg/dL)</td>
                             <td><input type="text" id="VALUE4" style="width: 100%"; placeholder="125 - 400 mg/dL "></td>
                         </tr>
                         <tr>
@@ -957,30 +838,26 @@ $(function() {
                                 <input type="radio" id="CP_4" name="CP" value="Asymptomatic">
                                 <label for="CP_4">Asymptomatic</label><br></td>
                         </tr>
-                        <tr class="noMargin"> <td colspan="2" class="noMargin" style="border-collapse: collapse; border: none;">
-                            <input type="button" onclick="displayResults()"
-                            value="SUBMIT :)" class="button"><br/>
-                            </td>
-                        </tr>
-
                     </table>
 
+                    <input type="button" onclick="displayResults()" value="SUBMIT :)" class="button"><br/>
                 </form>
-
 
             </div>
             <div class="RESULT_SECTION">
-                <h1>Risk Percentile:</h1>
-                <div id="result_text">
+                <h1>Risk:</h1>
+                <div class="result_text">
                     <p id="result"> </p> <!--value you enter -->
-                    <p id="risk_score_section"><div id="heart_div" class="heart">&#x2665;</div></p>
-                    <!--percent-->
+                    <p id="risk_score_section"> </p> <!--percent -->
                 </div>
             </div>
 
-
-             <p id="discussion"> </p>
-
+            <div class="RESULT_TEXT_SECTION">
+                <div class="result_text_explanation">
+                    <p id="discussion"> </p>
+                </div>
+            </div>
+            <div class="heart">&#x2665;</div>
 
             <!-- <a href="#top">Link2</a> -->
             <br>
