@@ -188,14 +188,6 @@
        width: 89%;
        }
 
-    .RESULT_SECTION {
-    margin-top: -5px;
-    }
-
-    .table_part {
-    width: 100%;
-    }
-
     .result_text{
     border: 1px solid #595656;
     }
@@ -261,171 +253,6 @@
         z-index: 1;
     }
 
-    .blur-in {
-        -webkit-animation: blur 0s forwards;
-        -moz-animation: blur 0s forwards;
-        -o-animation: blur 0s forwards;
-        animation: blur 0s forwards;
-    }
-
-    .blur-out {
-        -webkit-animation: blur-out 0s forwards;
-        -moz-animation: blur-out 0s forwards;
-        -o-animation: blur-out 0s forwards;
-        animation: blur-out 0s forwards;
-    }
-
-    @-webkit-keyframes blur {
-        0% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-
-        100% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-    }
-
-    @-moz-keyframes blur {
-        0% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-
-        100% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-    }
-
-    @-o-keyframes blur {
-        0% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-
-        100% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-    }
-
-    @keyframes blur {
-        0% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-
-        100% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-    }
-
-    @-webkit-keyframes blur-out {
-        0% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-
-        100% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-    }
-
-    @-moz-keyframes blur-out {
-        0% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-
-        100% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-    }
-
-    @-o-keyframes blur-out {
-        0% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-
-        100% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-    }
-
-    @keyframes blur-out {
-        0% {
-            -webkit-filter: blur(4px);
-            -moz-filter: blur(4px);
-            -o-filter: blur(4px);
-            -ms-filter: blur(4px);
-            filter: blur(4px);
-        }
-
-        100% {
-            -webkit-filter: blur(0px);
-            -moz-filter: blur(0px);
-            -o-filter: blur(0px);
-            -ms-filter: blur(0px);
-            filter: blur(0px);
-        }
-    }
-    .pop-up {
-        position: fixed;
-        margin: 5% auto;
-        left: 0;
-        right: 0;
-        z-index: 2;
-    }
-
     .box {
         background-color: whitesmoke;
         text-align: center;
@@ -468,279 +295,34 @@
         background-color: #e62c2c;
         margin-top: -1px;
     }
+/*3D avatar*/
+.me {
+  float: left;
+  max-width: 61ch;
+  margin-left: 85px;
+  shape-outside: url(https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp);
+  height: 232px;
+  transform: translateX(-16px);
+}
+.me_text {
+  max-width: 61ch;
+  text-align: justify;
+  margin: 16px auto;
 
-    .box p {
-        padding: 20px 65px 10px 65px;
-        color: dimgray;
-    }
-    #result {
-        float:left;
-    }
-    #risk_score_section {
-        float:right;
-        font-size: 200px;
-        margin-top: 20px;
-    }
+}
 
-    /* heart beating*/
-    .heart {
-      text-align: center;
-      margin-right: 70px;
-    }
-    .heart {
-        font-size: 150px;
-        color: #e00;
-        animation: beat .25s infinite alternate;
-        transform-origin: center;
-    }
-
-    /* Heart beat animation */
-    @keyframes beat{
-        to { transform: scale(1.4); }
-    }
  </style>
 
-<script>
-$(function() {
-  $('.pop-up').hide();
-  $('.pop-up').fadeIn(0);
-
-      $('.close-button').click(function (e) {
-
-      $('.pop-up').fadeOut(0);
-      $('#overlay').removeClass('blur-in');
-      $('#overlay').addClass('blur-out');
-      e.stopPropagation();
-
-    });
- });
-</script>
-
-    <script>
-        function displayResults() {
-
-            // SET DEFAULT VALUES
-            document.getElementById("result").innerHTML = "";
-            var gender = "<span style='color: red;'>Please select a gender option</span>";
-            var fbs = "<span style='color: red;'>Please select a blood sugar option</span>";
-            var angina = "<span style='color: red;'>Please select an angina option</span>";
-            var ecg = "<span style='color: red;'>Please select a resting ECG option</span>";
-            var cp = "<span style='color: red;'>Please select a chest pain option</span>";
-            var risk_score = 0;
-//getting values only textboxes
-            var age = document.getElementById("VALUE1").value;
-            var bp = document.getElementById("VALUE3").value;
-            var chol = document.getElementById("VALUE4").value;
-            var st = document.getElementById("VALUE6").value;
-            var max_hr = document.getElementById("VALUE7").value;
-
-            // TEXT BOX LABELS
-            array_names = ["Age", "Blood Pressure", "Cholesterol", "ST Depression", "Max Heart Rate"]
-
-            // TEXT BOX VALUES
-            array = [age, bp, chol, st, max_hr]
-
-            // PRINT EACH VALUE BACK
-            for (i = 0; i < array.length; i++) {
-              //i=0 - element number=1 - variable age
-
-                // GET THE RIGHT VALUE FROM THE LIST
-                var array_element = array[i]
-
-                // CHECK IF THE ENTERED VALUE IS A NUMBER
-                if(isNaN(array_element)){
-                    document.getElementById("result").innerHTML
-                                += array_names[i] + ": "
-                                + "<span style='color: red;'>Please enter a number!</span>" +
-                                "<br>";
-                }
-                else {
-                    // CHECK IF THE VALUE IS EMPTY
-                    if (array_element.length > 0) {
-                        if (i == 0) {
-                            if (array_element >= 16 && array_element <= 115) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + "<br>";
-                            }
-                            else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + "<span style='color: red;'>Please enter a value in between 16 and 115 years</span>" + "<br>";
-                            }
-                        }
-                        else if (i == 1) {
-                            if (array_element >= 60 && array_element <= 200) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + "<br>";
-                            }
-                            else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + "<span style='color: red;'>Values must be in between 60 and 200 mmHg</span>" + "<br>";
-                            }
-                        }
-                        else if (i == 2) {
-                            if (array_element >= 125 && array_element <= 400) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + "<br>";
-                            }
-                            else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + "<span style='color: red;'>Values must be in between 125 and 400 mg/dl</span>" + "<br>";
-                            }
-                        }
-                        else if (i == 3) {
-                            if (array_element >= 0 && array_element <= 2) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + "<br>";
-                            }
-                            else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + "<span style='color: red;'>Values must be in between 0 and 2 mm</span>" + "<br>";
-                            }
-                        }
-
-                        else if (i == 4) {
-                            if (array_element >= 80 && array_element <= 220) {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + array[i] + "<br>";
-                            }
-                            else {
-                                document.getElementById("result").innerHTML
-                                    += array_names[i] + ": "
-                                    + "<span style='color: red;'>Values must be in between 80 and 220 bpm</span>" + "<br>";
-                            }
-                        }
-
-                    }
-                    // WRITE REMINDER IF VALUE IS EMPTY
-                    else {
-                        if (i == 0) {
-                            document.getElementById("result").innerHTML
-                                += array_names[i] + ": "
-                                + "<span style='color: red;'>Please enter an " + array_names[i].toLowerCase() +
-                                " value</span>" + "<br>";
-                        }
-                        else if (i == 3) {
-                            document.getElementById("result").innerHTML
-                                += array_names[i] + ": "
-                                + "<span style='color: red;'>Please enter a ST depression value</span>" + "<br>";
-                        }
-                        else {
-                            document.getElementById("result").innerHTML
-                                += array_names[i] + ": "
-                                + "<span style='color: red;'>Please enter a " + array_names[i].toLowerCase() +
-                                " value</span>" + "<br>";
-                        }
-                    }
-                }
-            }
-
-            // CHECK WHICH GENDER BUTTON IS CHECKED
-            if (document.getElementById("gender1").checked) {
-                gender = document.getElementById("gender1").value;
-            }
-            else if (document.getElementById("gender2").checked) {
-                gender = document.getElementById("gender2").value;
-            }
-
-            document.getElementById("result").innerHTML
-                                += "Gender: "
-                                + gender + "<br>";
-
-            // CHECK WHICH BLOOD SUGAR BUTTON IS CHECKED
-            if (document.getElementById("bloodsugar1").checked) {
-                fbs = document.getElementById("bloodsugar1").value;
-            }
-            else if (document.getElementById("bloodsugar2").checked) {
-                bs = document.getElementById("bloodsugar2").value;
-            }
-
-            document.getElementById("result").innerHTML
-                                += "Blood Sugar: "
-                                + fbs + "<br>";
-
-            // CHECK WHICH ANGINA BUTTON IS CHECKED
-            if (document.getElementById("True_angina").checked) {
-                angina = document.getElementById("True_angina").value;
-            }
-            else if (document.getElementById("False_angina").checked) {
-                angina = document.getElementById("False_angina").value;
-            }
-
-            document.getElementById("result").innerHTML
-                                += "Exercise Angina: "
-                                + angina + "<br>";
-
-            // CHECK WHICH ECG BUTTON IS CHECKED
-            if (document.getElementById("ECG_0").checked) {
-                ecg = document.getElementById("ECG_0").value;
-            }
-            else if (document.getElementById("ECG_1").checked) {
-                ecg = document.getElementById("ECG_1").value;
-            }
-            else if (document.getElementById("ECG_2").checked) {
-                ecg = document.getElementById("ECG_2").value;
-            }
-
-            document.getElementById("result").innerHTML
-                                += "Resting ECG: "
-                                + ecg + "<br>";
-
-            // CHECK WHICH CHEST PAIN BUTTON IS CHECKED
-            if (document.getElementById("CP_1").checked) {
-                cp = document.getElementById("CP_1").value;
-            }
-            else if (document.getElementById("CP_2").checked) {
-                cp = document.getElementById("CP_2").value;
-            }
-            else if (document.getElementById("CP_3").checked) {
-                cp = document.getElementById("CP_3").value;
-            }
-            else if (document.getElementById("CP_4").checked) {
-                cp = document.getElementById("CP_4").value;
-            }
-
-            document.getElementById("result").innerHTML
-                                            += "Chest Pain: "
-                                            + cp + "<br>";
-
-            document.getElementById("risk_score_section").innerHTML = risk_score + "% <br>";
-            //document.getElementById("discussion").innerHTML = "....................................................................................................<br>text";
-        }
 </script>
 
 </head>
 
 <body>
-<div class="row pop-up">
-    <div class="box small-6 large-centered">
-        <a href="#" class="close-button">x</a>
-        <h3>Instructions</h3>
-        <p>The result that may appear here is not something 100% real, it's just a prediction made by machine learning based on your inputs, so if you are concerned about your cardiac health, visit a doctor.</p>
-        <p>Please, when writing your inputs, make sure you only use numbers inside the given ranges.</p>
-    </div>
-</div>
-<div id="overlay" class="cover blur-in">
-    <a name="top"></a>
+
     <div class="header_section">
         <h1>HEART ATTACKS PREDICTION</h1>
         <h2>Risk prediction by machine learning</h2>
     </div>
-
-    <!--<div class="navigation">
-    <a href="https://www.google.com.ec/">Link1</a>
-    <a href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
-    <a href="#">Link3</a>
-    <a href="#" class="right">Link</a>
-    </div>-->
 
     <div class="row">
         <div class="side">
@@ -748,116 +330,28 @@ $(function() {
 
             <a class="link_first" href="index.html">Home</a>
             <a class="link1" href="index2.html" >Information</a>
-            <a class="link1" href="index2.html" >About Me</a>
+            <a class="link1" href="aboutme.html" >About Me</a>
             <!-- <a class="link1" href="#bottom">bottom link</a>-->
             <a class="link1" href="https://www.google.com.ec/">Link1</a>
             <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
-
-        </div>
+  </div>
         <div class="main">
-
-            <div class="table_part">
-                <h1>Fill the values:</h1>
-                <form>
-                    <table class="formtable">
-                        <tr>
-                            <th>LABELS</th>
-                            <th>VALUES</th>
-                        </tr>
-
-                        <tr>
-                            <td><i class="fa fa-calendar" style="color: black;"></i> Age</td>
-                            <td><input type="text" id="VALUE1" style="width: 100%;"; placeholder="16 - 115 years"></td>
-                        </tr>
-
-                        <tr>
-                            <td><i class="fa fa-venus-mars" style="color: black;"></i> Gender</td>
-                            <td>
-                                <input type="radio" id="gender1" name="gender" value="Female">
-                                <label for="gender1">Female</label><br>
-                                <input type="radio" id="gender2" name="gender" value="Male">
-                                <label for="gender2">Male</label><br></td>
-                        </tr>
-
-                        <tr>
-                            <td><i class="fa fa-street-view" style="color: black;"></i> Resting blood pressure (mmHg)</td>
-                            <td><input type="text" id="VALUE3" style="width: 100%"; placeholder="60 - 200 mmHg"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td><i class="fa fa-balance-scale" style="color: black;"></i> Total cholesterol(mg/dL)</td>
-                            <td><input type="text" id="VALUE4" style="width: 100%"; placeholder="125 - 400 mg/dL "></td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-tint" style="color: red;"></i> Fasting blood sugar is > 120(mg/dL)</td>
-                            <td>
-                                <input type="radio" id="bloodsugar1" name="fbs" value="Yes">
-                                <label for="bloodsugar1">Yes</label><br>
-                                <input type="radio" id="bloodsugar2" name="fbs" value="No">
-                                <label for="bloodsugar2">No</label><br></td>
-                        </tr>
-
-
-                        <tr>
-                            <td><i class="fa fa-heart" style="color: red;"></i> Exercise-induced ST depression [difference in relation to rest (mm)]</td>
-                            <td><input type="text" id="VALUE6" style="width: 100%"; placeholder="0 - 2 mm"></td>
-                        </tr>
-
-                        <tr>
-                            <td><i class="fa fa-user-md" style="color: black;"></i> Angina induced by exercise</td>
-                            <td>
-                                <input type="radio" id="True_angina" name="angina" value="Yes">
-                                <label for="True_angina">Yes</label><br>
-                                <input type="radio" id="False_angina" name="angina" value="No">
-                                <label for="False_angina">No</label><br></td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-stethoscope" style="color: black;"></i> Maximum heart rate achieved (bpm)</td>
-                            <td><input type="text" id="VALUE7" style="width: 100%"; placeholder="80 - 220 bpm"></td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-heartbeat" style="color: red;"></i> Resting ECG results</td>
-                            <td>
-                                <input type="radio" id="ECG_0" name="ECG" value="Normal">
-                                <label for="ECG_0">Normal</label><br>
-                                <input type="radio" id="ECG_1" name="ECG" value="ST Abnormality">
-                                <label for="ECG_1">ST wave abnormality</label><br>
-                                <input type="radio" id="ECG_2" name="ECG" value="Ventricular hypertrophy">
-                                <label for="ECG_2">Left ventricular hypertrophy</label><br></td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-ambulance" style="color: black;"></i> Chest pain </td>
-                            <td>
-                                <input type="radio" id="CP_1" name="CP" value="Typical Angina">
-                                <label for="CP_1">Typical Angina</label><br>
-                                <input type="radio" id="CP_2" name="CP" value="Atypical Angina">
-                                <label for="CP_2">Atypical angina</label><br>
-                                <input type="radio" id="CP_3" name="CP" value="Non-anginal pain">
-                                <label for="CP_3">Non-anginal pain</label><br>
-                                <input type="radio" id="CP_4" name="CP" value="Asymptomatic">
-                                <label for="CP_4">Asymptomatic</label><br></td>
-                        </tr>
-                    </table>
-
-                    <input type="button" onclick="displayResults()" value="SUBMIT :)" class="button"><br/>
+          <img
+              class="me"
+              alt="3D avatar" src="https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp"
+            />
+            <div class="me_text">
+                <h5>My name is Rafaela Baldeon and I`m 15 years old.</h5>
+                <h5>I started making this website, because</h5>
+                <h5>Also, I like ----,----,----</h5>
+            </div>
                 </form>
 
             </div>
-            <div class="RESULT_SECTION">
-                <h1>Risk:</h1>
-                <div class="result_text">
-                    <p id="result"> </p> <!--value you enter -->
-                    <p id="risk_score_section"> </p> <!--percent -->
-                </div>
             </div>
 
-            <div class="RESULT_TEXT_SECTION">
-                <div class="result_text_explanation">
-                    <p id="discussion"> </p>
                 </div>
             </div>
-            <div class="heart">&#x2665;</div>
 
             <!-- <a href="#top">Link2</a> -->
             <br>
