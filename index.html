@@ -25,9 +25,6 @@
          font-size: 40px;
       }
 
-      h1, h4 {
-        padding-left: -1px;
-      }
       .header_section {
          background: #e62c2c; /*background: url("weather.png")*/
          padding-top: 50px;
@@ -105,46 +102,46 @@
          flex-wrap: wrap;
       }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-       .side {
-         -ms-flex: 10%; /* IE10 */
-         flex: 10%;
-         background-color: #fae1e1;
-         padding: 20px;
-         position: fixed;
-         height: 100%;
-         margin-top: 0px;
-         text-align: left;
-         z-index: 9999;
-         }
+    /* Create two unequal columns that sits next to each other */
+    /* Sidebar/left column */
+           .side {
+             -ms-flex: 10%; /* IE10 */
+             flex: 10%;
+             background-color: #fae1e1;
+             padding: 20px;
+             position: fixed;
+             height: 100%;
+             margin-top: 0px;
+             text-align: left;
+             z-index: 9999;
+             }
 
-         .wrapper{
-  position: relative;
-  width: 100px;
-  height: 120px;
-}
+             .wrapper{
+      position: relative;
+      width: 100px;
+      height: 120px;
+    }
 
 
-#loadingText {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #E3001F;
-}
+    #loadingText {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #E3001F;
+    }
 
-/* Main column */
+    /* Main column */
        .main {
-         -ms-flex: 90%; /* IE10 */
-         flex: 90%;
+         -ms-flex: 95%; /* IE10 */
+         flex: 95%;
          background-color: white;
          padding: 20px;
-         margin-left: 20%;
+         margin-left: 18%;
        }
 
        img {
@@ -172,7 +169,7 @@
        padding: 8px;
        }
 
-       table, .RESULT_SECTION, .RESULT_TEXT_SECTION {
+       table, .RESULT_TEXT_SECTION {
        margin: 3%;
        padding: 0.2%;
        margin-bottom: -7px;
@@ -192,7 +189,7 @@
        }
 
     .RESULT_SECTION {
-        width: 71%;
+        width: 100%;
         margin-top: -5px;
         display: block;
     }
@@ -213,11 +210,14 @@
     }
     #risk_score_section {
         float:right;
-        font-size: 160px;
-        margin-top: 35px;
+        font-size: 120px;
+        margin-top: 45px;
     }
     .table_part h1 {
         padding-left: 35px;
+    }
+    .RESULT_SECTION h1 {
+        margin-left: -35px;
     }
     .sidebar_title, .link1, .link_first {
         padding: 10px;
@@ -516,7 +516,7 @@
         padding: 0px;
         margin: 0px;
      }
-    @media screen and (max-width: 1650px) {
+    @media screen and (max-width: 1250px) {
         #result {
         width: 100%;
          }
@@ -550,6 +550,10 @@ $(function() {
 </script>
 
     <script>
+    function round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
+}
         function displayResults() {
 
             // set default values of variables
@@ -596,13 +600,15 @@ $(function() {
                 else {
                     // check if it is empty
                     if (array_element.length > 0) {
+                        // age
                         if (i == 0) {
                             if (array_element >= 16 && array_element <= 115) {
                                 if (array_element > 40) {
                                   document.getElementById("result").innerHTML
                                       += array_names[i] + ": "
                                       + array[i] + " (high risk)<br>";
-                                  risk_score += parseFloat(1);
+                                  age_risk = (array[i]-40)/(75);
+                                  risk_score += parseFloat(round(age_risk, 1));
                                 }
                                 else {
                                   document.getElementById("result").innerHTML
@@ -617,13 +623,15 @@ $(function() {
                                     + "<span style='color: red;'>Please enter a value in between 16 and 115 years</span>" + "<br>";
                             }
                         }
+                        // blood pressure
                         else if (i == 1) {
                             if (array_element >= 60 && array_element <= 200) {
                               if (array_element >= 60 && array_element < 90) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (lower range risk)<br>";
-                                risk_score += parseFloat(1);
+                                bp_risk = (array[i]-90)/(60 - 90);
+                                risk_score += parseFloat(round(bp_risk, 1));
                               }
                               else if (array_element >= 90 && array_element <= 130) {
                                 document.getElementById("result").innerHTML
@@ -635,6 +643,9 @@ $(function() {
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
                                 risk_score += parseFloat(1);
+                                //error
+                                bp_risk = (array[i]-130)/(200 - 130);
+                                risk_score += parseFloat(round(bp_risk, 1));
                               }
 
                             }
@@ -644,13 +655,15 @@ $(function() {
                                     + "<span style='color: red;'>Values must be in between 60 and 200 mmHg</span>" + "<br>";
                             }
                         }
+                        //  cholesterol
                         else if (i == 2) {
                             if (array_element >= 125 && array_element <= 400) {
                               if (array_element > 200) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                risk_score += parseFloat(1);
+                                c_risk = (array[i]-200)/(400 - 200);
+                                risk_score += parseFloat(round(c_risk, 1));
                               }
                               else {
                                 document.getElementById("result").innerHTML
@@ -665,13 +678,15 @@ $(function() {
                                     + "<span style='color: red;'>Values must be in between 125 and 400 mg/dl</span>" + "<br>";
                             }
                         }
+                        // ST depression
                         else if (i == 3) {
                             if (array_element >= 0 && array_element <= 2) {
                               if (array_element >= 0 && array_element < 1) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (lower range risk)<br>";
-                                risk_score += parseFloat(1);
+                                st_risk = (array[i]-1)/(0 - 1);
+                                risk_score += parseFloat(round(st_risk, 1));
                               }
                               else if (array_element >= 1 && array_element <= 1.5) {
                                 document.getElementById("result").innerHTML
@@ -682,7 +697,8 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                risk_score += parseFloat(1);
+                                st_risk = (array[i]-1.5)/(2 - 1.5);
+                                risk_score += parseFloat(round(st_risk, 1));
                               }
                             }
                             else {
@@ -691,14 +707,15 @@ $(function() {
                                     + "<span style='color: red;'>Values must be in between 0 and 2 mm</span>" + "<br>";
                             }
                         }
-
+                        // max heart rate
                         else if (i == 4) {
                             if (array_element >= 80 && array_element <= 220) {
                               if (array_element >= 80 && array_element < 120) {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (lower range risk)<br>";
-                                risk_score += parseFloat(1);
+                                hr_risk = (array[i]-120)/(80 - 120);
+                                risk_score += parseFloat(round(hr_risk, 1));
                               }
                               else if (array_element >= 120 && array_element <= 190) {
                                 document.getElementById("result").innerHTML
@@ -709,7 +726,8 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                risk_score += parseFloat(1);
+                                hr_risk = (array[i]-190)/(220 - 190);
+                                risk_score += parseFloat(round(hr_risk, 1));
                               }
                             }
                             else {
@@ -752,6 +770,8 @@ $(function() {
                 gender = document.getElementById("gender2").value;
                 gender_num = 1
             }
+
+            // put the right gender text
             if (gender_num == 0 && age > 40) {
               document.getElementById("result").innerHTML
                                   += "Gender: "
@@ -772,7 +792,7 @@ $(function() {
             else {
               document.getElementById("result").innerHTML
                   += "Gender: "
-                  + "<span style='color: red;'>Please, also enter age</span>" + "<br>";//complain
+                  + "<span style='color: red;'>Please also enter age</span>" + "<br>";//complain
             }
 
 
@@ -799,7 +819,7 @@ $(function() {
             else {
               document.getElementById("result").innerHTML
                   += "Blood sugar: "
-                  + "<span style='color: red;'>Please, enter blood sugar option</span>" + "<br>";//complain
+                  + "<span style='color: red;'>Please enter blood sugar option</span>" + "<br>";//complain
             }
 
             // check which angina was picked
@@ -812,6 +832,7 @@ $(function() {
                 a_i_e = 1
             }
 
+            // put the right angina pain text
             if (a_i_e == 0) {
               document.getElementById("result").innerHTML
                                   += "Exercise Angina: "
@@ -828,8 +849,9 @@ $(function() {
             else {
               document.getElementById("result").innerHTML
                   += "Exercise Angina: "
-                  + "<span style='color: red;'>Please, enter an angina option</span>" + "<br>";//complain
+                  + "<span style='color: red;'>Please enter an angina option</span>" + "<br>";//complain
             }
+
             // check which ecg was picked
             if (document.getElementById("ECG_0").checked) {
                 ecg = document.getElementById("ECG_0").value;
@@ -843,11 +865,8 @@ $(function() {
                 ecg = document.getElementById("ECG_2").value;
                 ecg_res = 2
             }
-            else {
-              document.getElementById("result").innerHTML
-                  += "Resting ECG: "
-                  + "<span style='color: red;'>Please, enter an ecg option</span>" + "<br>";//complain
-            }
+
+            // put the right ecg pain text
             if (ecg_res == 0) {
               document.getElementById("result").innerHTML
                                   += "Resting ECG: "
@@ -868,8 +887,9 @@ $(function() {
             }
             else {
               document.getElementById("result").innerHTML
-                  += "Chest pain: "
-                  + "<span style='color: red;'>Please, enter a chest pain option </span>" + "<br>";//complain
+                  += "Resting ECG: "
+                  + "<span style='color: red;'>Please enter an ECG option</span>" + "<br>";
+                  //complain
             }
 
             // check which cp was picked
@@ -889,6 +909,8 @@ $(function() {
                 cp = document.getElementById("CP_4").value;
                 chest_p = 3
             }
+
+            // put the right chest pain text
             if (chest_p == 0) {
               document.getElementById("result").innerHTML
                                               += "Chest Pain: "
@@ -912,6 +934,12 @@ $(function() {
                                               += "Chest Pain: "
                                               + cp + "  (no risk)<br>";
             }
+            else {
+              document.getElementById("result").innerHTML
+                  += "Chest Pain: "
+                  + "<span style='color: red;'>Please enter a chest pain option </span>" + "<br>";//complain
+            }
+
 
             document.getElementById("heart_div").style.visibility = "hidden";
             document.getElementById("heart_div").style.display = "none";
@@ -968,7 +996,7 @@ $(function() {
         <div class="main">
 
             <div class="table_part">
-                <h1>Fill the values:</h1>
+                <h1>Fill the Values:</h1>
                 <form>
                     <table class="formtable">
                         <tr>
@@ -1055,13 +1083,8 @@ $(function() {
                             </td>
                         </tr>
 
-                    </table>
-
-                </form>
-
-
-            </div>
-            <div class="RESULT_SECTION">
+                         <tr class="noMargin"> <td colspan="2" class="noMargin" style="border-collapse: collapse; border: none;">
+                                        <div class="RESULT_SECTION">
                 <h1>Risk Percentile:</h1>
                 <div id="result_text">
                     <p id="result"> </p> <!--value you enter -->
@@ -1069,9 +1092,16 @@ $(function() {
                     <!--percent-->
                 </div>
             </div>
+                        </tr>
+
+                    </table>
+
+                </form>
 
 
-             <p id="discussion"> </p>
+            </div>
+
+
 
 
             <!-- <a href="#top">Link2</a> -->
