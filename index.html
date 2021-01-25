@@ -607,7 +607,7 @@ $(function() {
                                   document.getElementById("result").innerHTML
                                       += array_names[i] + ": "
                                       + array[i] + " (high risk)<br>";
-                                  age_risk = (array[i]-40)/(75);
+                                  age_risk = ((array[i]-40)/(75))*0.095;
                                   risk_score += parseFloat(round(age_risk, 1));
                                 }
                                 else {
@@ -630,7 +630,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (lower range risk)<br>";
-                                bp_risk = (array[i]-90)/(60 - 90);
+                                bp_risk = ((array[i]-90)/(60 - 90))*0.0874;
                                 risk_score += parseFloat(round(bp_risk, 1));
                               }
                               else if (array_element >= 90 && array_element <= 130) {
@@ -642,9 +642,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                risk_score += parseFloat(1);
-                                //error
-                                bp_risk = (array[i]-130)/(200 - 130);
+                                bp_risk = ((array[i]-130)/(200 - 130))*0.0874;
                                 risk_score += parseFloat(round(bp_risk, 1));
                               }
 
@@ -662,7 +660,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                c_risk = (array[i]-200)/(400 - 200);
+                                c_risk = ((array[i]-200)/(400 - 200))*0.1397;
                                 risk_score += parseFloat(round(c_risk, 1));
                               }
                               else {
@@ -685,7 +683,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (lower range risk)<br>";
-                                st_risk = (array[i]-1)/(0 - 1);
+                                st_risk = ((array[i]-1)/(0 - 1))*0.1339;
                                 risk_score += parseFloat(round(st_risk, 1));
                               }
                               else if (array_element >= 1 && array_element <= 1.5) {
@@ -697,7 +695,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                st_risk = (array[i]-1.5)/(2 - 1.5);
+                                st_risk = ((array[i]-1.5)/(2 - 1.5))*0.1339;
                                 risk_score += parseFloat(round(st_risk, 1));
                               }
                             }
@@ -714,7 +712,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (lower range risk)<br>";
-                                hr_risk = (array[i]-120)/(80 - 120);
+                                hr_risk = ((array[i]-120)/(80 - 120))*0.1431;
                                 risk_score += parseFloat(round(hr_risk, 1));
                               }
                               else if (array_element >= 120 && array_element <= 190) {
@@ -726,7 +724,7 @@ $(function() {
                                 document.getElementById("result").innerHTML
                                     += array_names[i] + ": "
                                     + array[i] + " (high risk)<br>";
-                                hr_risk = (array[i]-190)/(220 - 190);
+                                hr_risk = ((array[i]-190)/(220 - 190))*0.1431;
                                 risk_score += parseFloat(round(hr_risk, 1));
                               }
                             }
@@ -776,13 +774,13 @@ $(function() {
               document.getElementById("result").innerHTML
                                   += "Gender: "
                                   + gender + " (risk range)<br>"; //females + 40 years
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.0332);
             }
             else if (gender_num == 1) {
               document.getElementById("result").innerHTML
                                   += "Gender: "
                                   + gender + " (risk range)<br>";//males
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.0332);
             }
             else if (gender_num == 0 && age <= 40) {
               document.getElementById("result").innerHTML
@@ -809,7 +807,7 @@ $(function() {
               document.getElementById("result").innerHTML
                                   += "Blood Sugar: "
                                   + fbs + " (high risk)<br>";
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.015);
             }
             else if (f_b_s == 1) {
               document.getElementById("result").innerHTML
@@ -837,7 +835,7 @@ $(function() {
               document.getElementById("result").innerHTML
                                   += "Exercise Angina: "
                                   + angina + " (high risk)<br>";
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.1374);
 
             }
             else if (a_i_e == 1) {
@@ -877,13 +875,13 @@ $(function() {
               document.getElementById("result").innerHTML
                                   += "Resting ECG: "
                                   + ecg + " (high risk)<br>";
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.025);
             }
             else if (ecg_res == 2) {
               document.getElementById("result").innerHTML
                                   += "Resting ECG: "
                                   + ecg + " (high risk)<br>";
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.025);
             }
             else {
               document.getElementById("result").innerHTML
@@ -915,14 +913,14 @@ $(function() {
               document.getElementById("result").innerHTML
                                               += "Chest Pain: "
                                               + cp + " (high risk)<br>";
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.1903);
 
             }
             else if (chest_p == 1) {
               document.getElementById("result").innerHTML
                                               += "Chest Pain: "
                                               + cp + " (high risk)<br>";
-              risk_score += parseFloat(1);
+              risk_score += parseFloat(0.1903);
             }
             else if (chest_p == 2) {
               document.getElementById("result").innerHTML
@@ -943,7 +941,7 @@ $(function() {
 
             document.getElementById("heart_div").style.visibility = "hidden";
             document.getElementById("heart_div").style.display = "none";
-            document.getElementById("risk_score_section").innerHTML = risk_score + "% <br>";
+            document.getElementById("risk_score_section").innerHTML = round(risk_score*100/0.9009, 1) + "% <br>";
 
         }
 </script>
@@ -956,11 +954,17 @@ $(function() {
             <span class="sidebar_title">Navigation</span>
 
             <a class="link_first" href="index.html">Home</a>
-            <a class="link1" href="index2.html" >Information</a>
-            <a class="link1" href="index2.html" >About Me</a>
+            <a class="link1" href="info.html" >Information</a>
+            <a class="link1" href="infospanish.html" >Información</a>
+            <a class="link1" href="aboutme.html" >About Me</a>
             <!-- <a class="link1" href="#bottom">bottom link</a>-->
-            <a class="link1" href="https://www.google.com.ec/">Link1</a>
-            <a class="link1" href="https://en.wikipedia.org/wiki/Giraffe">Link2</a>
+            <a class="link1" href="https://www.heart.org/en/health-topics/heart-attack/life-after-a-heart-attack/lifestyle-changes-for-heart-attack-prevention">Link1</a>
+            <a class="link1" href="https://noticias.usfq.edu.ec/2018/10/ponte-pilas-informate-sobre-los.html">Link2</a>
+            <a class="link1" href="https://cpr.heart.org/en/resources/what-is-cpr">Link3</a>
+            <a class="link1" href="https://gi.org/topics/non-cardiac-chest-pain/#:~:text=What%20is%20non%2Dcardiac%20chest,%2C%20squeezing%20or%20pressure%2Dlike.">Link4</a>
+
+
+
 </div>
 </div>
 
@@ -972,7 +976,7 @@ $(function() {
     <div class="box small-6 large-centered">
         <a href="#" class="close-button">x</a>
         <h3>Instructions</h3>
-        <p>The result that may appear here is not something 100% real, it's just a prediction made by machine learning based on your inputs, so if you are concerned about your cardiac health, visit a doctor.</p>
+        <p>The result that may appear here is not something 100% real, it's just a percentile prediction made by machine learning based on your inputs, so if you are concerned about your cardiac health, visit a doctor.</p>
         <p>Please, when writing your inputs, make sure you only use numbers inside the given ranges.</p>
     </div>
 </div>

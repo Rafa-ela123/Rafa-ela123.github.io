@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Trying Demo</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -25,6 +27,14 @@
 
       h1 {
          font-size: 40px;
+      }
+
+      h5 {
+        font-family: Quicksand;
+        font-size: 40px;
+        margin: 0px;
+        padding-top: 10px;
+
       }
 
       h1, h4 {
@@ -65,8 +75,22 @@
       }
 
       p {
-         padding-left: 30px;
-         padding-right: 30px;
+         line-height: 20px;
+         font-family: Poppins;
+      }
+
+      h6 {
+        font-size: 20px;
+        line-height: 20px;
+        font-family: Poppins;
+        font-weight: bold;
+        margin: 0px;
+        margin-top: 20px;
+      }
+      li {
+        line-height: 20px;
+        font-family: Poppins;
+        line-height: 25px;
       }
 
       .navigation {
@@ -183,14 +207,6 @@
        font-weight: bold;
        padding: 8px;
        }
-       h6 {
-         font-size: 20px;
-         line-height: 20px;
-         font-family: Balsamiq Sans;
-         font-weight: bold;
-         margin: 0px;
-         margin-top: 20px;
-       }
 
        .button {
        padding: 10px;
@@ -305,21 +321,6 @@
         background-color: #e62c2c;
         margin-top: -1px;
     }
-/*3D avatar*/
-.me {
-  float: left;
-  max-width: 61ch;
-  margin-left: 85px;
-  shape-outside: url(https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp);
-  height: 232px;
-  transform: translateX(-16px);
-}
-.me_text {
-  max-width: 61ch;
-  text-align: justify;
-  margin: 16px auto;
-
-}
 
  </style>
 
@@ -337,6 +338,7 @@
     <div class="row">
         <div class="side">
             <span class="sidebar_title">Navigation</span>
+
             <a class="link_first" href="index.html">Home</a>
             <a class="link1" href="info.html" >Information</a>
             <a class="link1" href="infospanish.html" >Información</a>
@@ -346,19 +348,53 @@
             <a class="link1" href="https://noticias.usfq.edu.ec/2018/10/ponte-pilas-informate-sobre-los.html">Link2</a>
             <a class="link1" href="https://cpr.heart.org/en/resources/what-is-cpr">Link3</a>
             <a class="link1" href="https://gi.org/topics/non-cardiac-chest-pain/#:~:text=What%20is%20non%2Dcardiac%20chest,%2C%20squeezing%20or%20pressure%2Dlike.">Link4</a>
-
   </div>
         <div class="main">
-          <img
-              class="me"
-              alt="3D avatar" src="https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp"
-            />
-            <div class="me_text">
-                <h6>My name is Rafaela Baldeon and I'm 15 years old.</h6>
-                <h6>I'm a sophomore student.</h6>
-                <h6>I'm interested in science, medicine, technology, and arts.</h6>
-                <h6>I'm curious about finding objective ways that help the prevention of problems, especially medical ones.</h6>
-                <h6>My main objective with this heart attack risk percentile calculator is to use coding, machine learning, and AI to help to the prevention of heart attacks which is the most common cause of death worldwide, by informing people and making them aware of their cardiac health.</h6>
+            <div class="info_text">
+                <h5>Risk factors:</h5>
+                <p><li>Tobacco
+                <li>Overweight
+                <li>Sedentary lifestyle (no exercise)
+                <li>Alcohol abuse
+                <li>High blood pressure
+                <li>Diabetes
+                <li>High cholesterol
+                <li>Family history (genetics)</p>
+
+                <h5>Prevention:</h5>
+                <p>From the age of 35, preventive medicine should be done to see the risk factors. And to the cardiologist, people with cardiac symptoms, hypertension, family (first degree) with heart problems, etc, should assist.</p>
+                <p><li>No smoking
+                <li>Good stable weight
+                <li>Physical exercise
+                <li>Healthy diet
+                <li>Control of blood pressure and levels of cholesterol</p>
+
+                <h5>General information:</h5>
+                <h6>What is a heart attack?</h6>
+                <p>A heart attack occurs when blood flow to the heart stops or decreases.</p>
+                <h6>How common is this condition?</h6>
+                <p>Cardiovascular diseases are the leading cause of death in the world. This affects 4% of the world's population, which is 300 million people, this number is almost the total population of the United States. And there are 18 million deaths a year from this condition.</p>
+                <h6>What to do if someone has any symptoms of a heart attack?</h6>
+                <p>You should call an ambulance as soon as possible, or take the person to the hospital for an EKG.</p>
+                <h6>Does gender differ the risk?</h6>
+                <p>Men are more at risk than women, because during the period prior to menopause they have a protective effect from hormones. But already in menopause the risk between men and women is equal. But, unlike men, women have more atypical symptoms, which makes the diagnosis more complex.</p>
+                <li>An important factor that is often not taken into account, and can help to be aware and attentive to our health and therefore prevent a heart attack or any other disease, is to consider obstructive sleep apnea. This condition occurs when the tissues of the mouth such as the tongue relax, causing the space in the respiratory tract to be reduced and breathing to cut off for an instant.
+                <li>It is important to prevent not only heart attacks by avoiding risk factors, but also other diseases, such as diabetes, since diabetics have a 60% probability of risk of a heart attack, this probability is greater than that of a healthy person with a good lifestyle.
+                <li>Aspirin is a drug that is given to patients who have already had a heart attack or are at fairly high risk in portions prescribed by the cardiologist. But in the case of a person who does not need it and consumes it, they may have an ulcer or digestive bleeding. For this reason it is extremely important to always consult a doctor or if in case of having any symptoms attend immediately.
+                <br>
+                <br>
+                <h5>Symptoms:</h5>
+                <p><li>Chest pain
+                <li>Pain in different parts of the upper body, such as the arms or neck
+                <li>Sweating
+                <li>Shortness of breath
+                <li>Sickness
+                <li>Dizziness
+                <li>Abnormal pulse</p>
+
+                <h5>Source:</h5>
+                <p>Interview with interventional cardiologist dr. Alberto Cardenas</p>
+
 
             </div>
                 </form>

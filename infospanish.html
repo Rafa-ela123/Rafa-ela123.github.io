@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Trying Demo</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -25,6 +27,14 @@
 
       h1 {
          font-size: 40px;
+      }
+
+      h5 {
+        font-family: Quicksand;
+        font-size: 40px;
+        margin: 0px;
+        padding-top: 10px;
+
       }
 
       h1, h4 {
@@ -65,8 +75,22 @@
       }
 
       p {
-         padding-left: 30px;
-         padding-right: 30px;
+         line-height: 20px;
+         font-family: Poppins;
+      }
+
+      h6 {
+        font-size: 20px;
+        line-height: 20px;
+        font-family: Poppins;
+        font-weight: bold;
+        margin: 0px;
+        margin-top: 20px;
+      }
+      li {
+        line-height: 20px;
+        font-family: Poppins;
+        line-height: 25px;
       }
 
       .navigation {
@@ -183,14 +207,6 @@
        font-weight: bold;
        padding: 8px;
        }
-       h6 {
-         font-size: 20px;
-         line-height: 20px;
-         font-family: Balsamiq Sans;
-         font-weight: bold;
-         margin: 0px;
-         margin-top: 20px;
-       }
 
        .button {
        padding: 10px;
@@ -305,21 +321,6 @@
         background-color: #e62c2c;
         margin-top: -1px;
     }
-/*3D avatar*/
-.me {
-  float: left;
-  max-width: 61ch;
-  margin-left: 85px;
-  shape-outside: url(https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp);
-  height: 232px;
-  transform: translateX(-16px);
-}
-.me_text {
-  max-width: 61ch;
-  text-align: justify;
-  margin: 16px auto;
-
-}
 
  </style>
 
@@ -337,6 +338,7 @@
     <div class="row">
         <div class="side">
             <span class="sidebar_title">Navigation</span>
+
             <a class="link_first" href="index.html">Home</a>
             <a class="link1" href="info.html" >Information</a>
             <a class="link1" href="infospanish.html" >Información</a>
@@ -346,19 +348,53 @@
             <a class="link1" href="https://noticias.usfq.edu.ec/2018/10/ponte-pilas-informate-sobre-los.html">Link2</a>
             <a class="link1" href="https://cpr.heart.org/en/resources/what-is-cpr">Link3</a>
             <a class="link1" href="https://gi.org/topics/non-cardiac-chest-pain/#:~:text=What%20is%20non%2Dcardiac%20chest,%2C%20squeezing%20or%20pressure%2Dlike.">Link4</a>
-
   </div>
         <div class="main">
-          <img
-              class="me"
-              alt="3D avatar" src="https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp"
-            />
-            <div class="me_text">
-                <h6>My name is Rafaela Baldeon and I'm 15 years old.</h6>
-                <h6>I'm a sophomore student.</h6>
-                <h6>I'm interested in science, medicine, technology, and arts.</h6>
-                <h6>I'm curious about finding objective ways that help the prevention of problems, especially medical ones.</h6>
-                <h6>My main objective with this heart attack risk percentile calculator is to use coding, machine learning, and AI to help to the prevention of heart attacks which is the most common cause of death worldwide, by informing people and making them aware of their cardiac health.</h6>
+            <div class="info_text">
+                <h5>Factores de riesgo:</h5>
+                <p><li>Tabaco
+                <li>Sobrepeso
+                <li>Sedentarismo
+                <li>Abuso del alcohol
+                <li>Presión alta
+                <li>Diabetes
+                <li>Colesterol alto
+                <li>Historia familiar (genética)</p>
+
+                <h5>Prevención:</h5>
+                <p>A partir de los 35 años se debe realizar medicina preventiva para ver los factores de riesgo. Y al cardiólogo deben asistir las personas con síntomas cardíacos, hipertensión, familia en primer grado con problemas cardíacos, etc.</p>
+                <p><li>No fumar
+                <li>Mantener un peso estable
+                <li>Ejercicio físico
+                <li>Dieta saludable
+                <li>Controlar la presión y el colesterol</p>
+
+                <h5>Información general:</h5>
+                <h6>¿Que es un ataque cardiaco?</h6>
+                <p>Un ataque cardíaco ocurre cuando el flujo de sangre hacia el corazón se detiene o disminuye.</p>
+                <h6>¿Qué tan común es esta condición?</h6>
+                <p>Las enfermedades cardiovasculares son la primera causa de muerte en el mundo. Esto afecta al 4% de la población mundial que vienen a ser 300 millones de personas, este número es casi la población total de Estados Unidos. Y hay 18 millones de muertes al año por esta afección.</p>
+                <h6>¿Qué hacer si alguien tiene algún síntoma de un ataque cardiaco?</h6>
+                <p>Hay que llamar a una ambulancia lo más pronto posible, o llevarle al hospital para realizar un electrocardiograma.</p>
+                <h6>¿El género difiere el riesgo?</h6>
+                <p>Los hombres tienen más riesgo que las mujeres, debido a que durante el periodo previo a la menopausia ellas tienen un efecto protector de las hormonas. Pero ya en la menopausia el riesgo entre hombres y mujeres se iguala. Pero, a diferencia de los hombres, las mujeres tienen más síntomas atípicos, lo cual hace al diagnóstico más complejo.</p>
+                <li>Un factor importante que muchas veces no es tomado en cuenta, y puede ayudar a estar conscientes y atentos de nuestra salud y por lo tanto prevenir un ataque cardíaco o cualquier otra enfermedad es considerar el apnea obstructiva del sueño. Esta condición se da cuando los tejidos de la boca como la lengua se relajan, haciendo que el espacio en el tracto respiratorio se reduzca y la respiración se corte por un instante.
+                <li>Es importante prevenir no solo los ataques cardíacos mediante la evasión de los factores de riesgo, si no también de otras enfermedades, como es la diabetes, ya que los diabéticos tienen un 60% de probabilidad de riesgo a un infarto, esta probabilidad es mayor a la de una persona saludable con un buen estilo de vida.
+                <li>La aspirina es un medicamento que se da a pacientes que ya han sufrido un ataque cardíaco o que tienen un riesgo bastante alto en porciones recetadas por el cardiólogo. Pero en el caso de una persona que no necesita y la consume, esta puede tener una úlcera o un sangrado digestivo. Por esta razón es supremamente importante siempre consultar al médico o si en el caso de tener algún síntoma asistir inmediatamente.
+                <br>
+                <br>
+                <h5>Síntomas:</h5>
+                <p><li>Dolor de pecho
+                <li>Dolor en las diferentes partes alta del cuerpo, como los brazos o el cuello
+                <li>Sudoración
+                <li>Dificultad respiratoria
+                <li>Náuseas
+                <li>Mareo
+                <li>Pulso anormal</p>
+
+                <h5>Fuente:</h5>
+                <p>Entrevista al cardiólogo intervencionista dr. Alberto Cardenas</p>
+
 
             </div>
                 </form>
